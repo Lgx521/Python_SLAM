@@ -14,13 +14,13 @@
 
 - 指数映射：将李代数映射回李群
 - 对数映射：将李群映射为李代数
-
+---
 - Exponential mapping:  
 $$ 
-\exp(\bold{\phi^\wedge}) = \sum_{n=0}^\infty{\frac{1}{n!}(\phi^\wedge)^n}
+\exp(\boldsymbol{\phi^\wedge}) = \sum_{n=0}^\infty{\frac{1}{n!}(\phi^\wedge)^n}
 $$
-- Suppose $\phi = \theta \bold{a}$  
-Where $\theta$ is mudule and $\bold{a}$ is direction.
+- Suppose $\phi = \theta \boldsymbol{a}$  
+Where $\theta$ is mudule and $\boldsymbol{a}$ is direction.
 - Use some tricks:  
 $$
 (a^\wedge)^2=aa^T-I
@@ -76,3 +76,19 @@ $$
 ![relation](./images/relation.png)
 
 ---
+
+## 李代数求导--扰动模型
+Aiming at take the derivative:
+$$
+\frac{\partial(\exp(\phi^\wedge)\boldsymbol{p})}{\partial\phi}
+$$
+我们对$\boldsymbol{R}$进行一个微扰，以左扰动为例，左乘一个微扰对应的李代数$\varphi$，求导，有：
+$$
+\begin{aligned}
+\frac{\partial(\boldsymbol{R} \boldsymbol{p})}{\partial \varphi} & =\lim _{\varphi \rightarrow 0} \frac{\exp \left(\boldsymbol{\varphi}^{\wedge}\right) \exp \left(\phi^{\wedge}\right) \boldsymbol{p}-\exp \left(\phi^{\wedge}\right) \boldsymbol{p}}{\boldsymbol{\varphi}} \\
+& =\lim _{\varphi \rightarrow 0} \frac{\left(\boldsymbol{I}+\varphi^{\wedge}\right) \exp \left(\phi^{\wedge}\right) \boldsymbol{p}-\exp \left(\phi^{\wedge}\right) \boldsymbol{p}}{\varphi} \\
+& =\lim _{\varphi \rightarrow 0} \frac{\varphi^{\wedge} \boldsymbol{R} \boldsymbol{p}}{\varphi}=\lim _{\varphi \rightarrow 0} \frac{-(\boldsymbol{R} \boldsymbol{p})^{\wedge} \varphi}{\boldsymbol{\varphi}}\\
+&=-(\boldsymbol{R} \boldsymbol{p})^{\wedge}
+\end{aligned}
+$$
+

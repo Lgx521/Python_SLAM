@@ -5,7 +5,7 @@
 ### New definition on cross product
 
 $$
-\bold{a}\times \bold{b} = \begin{Vmatrix}
+\boldsymbol{a}\times \boldsymbol{b} = \begin{Vmatrix}
 \hat{i}  &\hat{j}  &\hat{k} \\
 a_1  &a_2  &a_3 \\
 b_1  &b_2  &b_3
@@ -14,13 +14,13 @@ b_1  &b_2  &b_3
 0 & -a_3 & a_2 \\
 a_3 & 0 & -a_1 \\
 -a_2 & a_1 & 0 
-\end{bmatrix} \bold{b} \equiv \bold{a}^\wedge \bold{b}
+\end{bmatrix} \boldsymbol{b} \equiv \boldsymbol{a}^\wedge \boldsymbol{b}
 $$
 
-Where we can import the $^\wedge$ symbol to reconstruct 3D vector $\bold{a}$ to and skew-symmetric matrix.  
+Where we can import the $^\wedge$ symbol to reconstruct 3D vector $\boldsymbol{a}$ to and skew-symmetric matrix.  
 
 $$
-\bold{a}^\wedge = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} ^\wedge = \begin{bmatrix}
+\boldsymbol{a}^\wedge = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} ^\wedge = \begin{bmatrix}
 0 & -a_3 & a_2 \\
 a_3 & 0 & -a_1 \\
 -a_2 & a_1 & 0 
@@ -30,47 +30,47 @@ $$
 ### Special Orthogonal Group
 - Rotation Matrix  
 $$
-SO(n)=\{\bold{R}\in \mathbb{R}^{n\times n} | \bold{RR}^T=\bold{I},det(\bold{R})=1\}
+SO(n)=\{\boldsymbol{R}\in \mathbb{R}^{n\times n} | \boldsymbol{RR}^T=\boldsymbol{I},det(\boldsymbol{R})=1\}
 $$
 For rotation matrix, $n=3$.
 
 ### Special Euclidian Group
 - Transform Matrix  
 $$
-\bold{T}=\begin{bmatrix}
-\bold{R} & \bold{t} \\
-\bold{0}^T & 1 \end{bmatrix}
+\boldsymbol{T}=\begin{bmatrix}
+\boldsymbol{R} & \boldsymbol{t} \\
+\boldsymbol{0}^T & 1 \end{bmatrix}
 $$
 
 $$
-SE(n)=\{\bold{T}\in \mathbb{R}^{4\times 4} | \bold{R}\in \mathrm{SO}(3),\bold{t}\in \mathbb{R}^{3}\}
+SE(n)=\{\boldsymbol{T}\in \mathbb{R}^{4\times 4} | \boldsymbol{R}\in \mathrm{SO}(3),\boldsymbol{t}\in \mathbb{R}^{3}\}
 $$
 
-- Inverse of $\bold{T}$   
+- Inverse of $\boldsymbol{T}$   
 $$
-\bold{T}^{-1}=
+\boldsymbol{T}^{-1}=
 \begin{bmatrix}
-\bold{R}^T & -\bold{R}^T\bold{t} \\
-\bold{0}^T & 1 \end{bmatrix}
+\boldsymbol{R}^T & -\boldsymbol{R}^T\boldsymbol{t} \\
+\boldsymbol{0}^T & 1 \end{bmatrix}
 $$
 
 ### Rotational vector
 - Rodrigues's formula:   
 $$
-\bold{R}=\cos\theta\bold{I}+(1-\cos\theta)\bold{nn}^T+\sin\theta \bold{n}^\wedge
+\boldsymbol{R}=\cos\theta\boldsymbol{I}+(1-\cos\theta)\boldsymbol{nn}^T+\sin\theta \boldsymbol{n}^\wedge
 $$
-Which shows that any rotation can be represented by a **rotation axis** and **rotation angle**, $\bold{n}$ and $\theta$ respectively.  
+Which shows that any rotation can be represented by a **rotation axis** and **rotation angle**, $\boldsymbol{n}$ and $\theta$ respectively.  
 
 Take trace both side, we can get that:
 $$
-\theta = \arccos\frac{tr(\bold{R})-1}{2}
+\theta = \arccos\frac{tr(\boldsymbol{R})-1}{2}
 $$
 
 
 ## Quaternion
 - Expression  
 $$
-\bold{q}=q_0+q_1 i+q_2 j+q_3 k=[s,\bold{v}]^T
+\boldsymbol{q}=q_0+q_1 i+q_2 j+q_3 k=[s,\boldsymbol{v}]^T
 $$
 
 $i,j,k$  just like the unit vector in rectangular coordinate, but are imaginary numbers, follows:
@@ -84,27 +84,27 @@ $$
 ### Computations
 - Multiplication  
 $$
-\bold{q}_a \bold{q}_b=[s_as_b-\bold{v}_a^T\bold{v_b},\space s_a\bold{v}_b+s_b\bold{v}_a+\bold{v}_a\times\bold{v}_b]^T
+\boldsymbol{q}_a \boldsymbol{q}_b=[s_as_b-\boldsymbol{v}_a^T\boldsymbol{v_b},\space s_a\boldsymbol{v}_b+s_b\boldsymbol{v}_a+\boldsymbol{v}_a\times\boldsymbol{v}_b]^T
 $$
 
 - Module  
 $$
-||\bold{q}||=\sqrt{s_a^2+||\bold{v}||^2}
+||\boldsymbol{q}||=\sqrt{s_a^2+||\boldsymbol{v}||^2}
 $$
 
 It is verified that:
 $$
-||\bold{q}_a\bold{q}_b||=||\bold{q}_a||\cdot||\bold{q}_b||
+||\boldsymbol{q}_a\boldsymbol{q}_b||=||\boldsymbol{q}_a||\cdot||\boldsymbol{q}_b||
 $$
 
 - Conjugate: Opposite the imaginary part  
 $$
-\bold{q}_a^*=[s_a,-v_a]^T
+\boldsymbol{q}_a^*=[s_a,-v_a]^T
 $$
 
 - Inverse  
 $$
-\bold{q}^{-1}=\frac{\bold{q}^*}{||\bold{q}||^2}
+\boldsymbol{q}^{-1}=\frac{\boldsymbol{q}^*}{||\boldsymbol{q}||^2}
 $$
 
 
@@ -112,35 +112,35 @@ $$
 
 - 三维空间中的点可以用一个虚四元数表示  
 $$
-\bold{p}=[0,x,y,z]^T
+\boldsymbol{p}=[0,x,y,z]^T
 $$
 - 任意单位四元数表示一个旋转  
 $$
-\bold{p}'=\bold{qpq}^{-1}
+\boldsymbol{p}'=\boldsymbol{qpq}^{-1}
 $$
 - 把四元数乘法写成矩阵乘法的形式   
 Define:
 $$
-\bold{q}^+=\begin{bmatrix}
-s & -\bold{v}^T \\
-\bold{v} & s\bold{I}+\bold{v}^\wedge\end{bmatrix}
+\boldsymbol{q}^+=\begin{bmatrix}
+s & -\boldsymbol{v}^T \\
+\boldsymbol{v} & s\boldsymbol{I}+\boldsymbol{v}^\wedge\end{bmatrix}
 $$
 
 $$
-\bold{q}^\oplus=\begin{bmatrix}
-s & -\bold{v}^T \\
-\bold{v} & s\bold{I}-\bold{v}^\wedge\end{bmatrix}
+\boldsymbol{q}^\oplus=\begin{bmatrix}
+s & -\boldsymbol{v}^T \\
+\boldsymbol{v} & s\boldsymbol{I}-\boldsymbol{v}^\wedge\end{bmatrix}
 $$
 
 - It is verified that  
 $$
-\bold{q}_1\bold{q}_2=\bold{q}_1^+\bold{q}_2=\bold{q}_2^\oplus\bold{q}_1
+\boldsymbol{q}_1\boldsymbol{q}_2=\boldsymbol{q}_1^+\boldsymbol{q}_2=\boldsymbol{q}_2^\oplus\boldsymbol{q}_1
 $$
 
 ### Rotational matrix from quaternion
 After brief derivation    
 $$
-\bold{R} = \bold{vv}^T+s^2\bold{I}+2s\bold{v}^\wedge+(\bold{v}^\wedge)^2
+\boldsymbol{R} = \boldsymbol{vv}^T+s^2\boldsymbol{I}+2s\boldsymbol{v}^\wedge+(\boldsymbol{v}^\wedge)^2
 $$
 
 Take the trace, we can obtain  
@@ -155,14 +155,14 @@ $$
 $$
 
 $$
-\bold{n}=\frac{\begin{bmatrix}q_1,q_2,q_3\end{bmatrix}^T}{\sin\frac\theta 2}
+\boldsymbol{n}=\frac{\begin{bmatrix}q_1,q_2,q_3\end{bmatrix}^T}{\sin\frac\theta 2}
 $$
 
 ## 射影变换
 $$
-\bold{T}_p=\begin{bmatrix}
-\bold{A} & \bold{t} \\
-\bold{a}^T & v\end{bmatrix}
+\boldsymbol{T}_p=\begin{bmatrix}
+\boldsymbol{A} & \boldsymbol{t} \\
+\boldsymbol{a}^T & v\end{bmatrix}
 $$
 - Invariance: 接触的平面的相交及相切特性  
 

@@ -11,7 +11,11 @@
 - to be continued
 
 ## Exponetional and Logarithm Mapping
-- In matrix:  
+
+- 指数映射：将李代数映射回李群
+- 对数映射：将李群映射为李代数
+
+- Exponential mapping:  
 $$ 
 \exp(\bold{\phi^\wedge}) = \sum_{n=0}^\infty{\frac{1}{n!}(\phi^\wedge)^n}
 $$
@@ -36,6 +40,39 @@ $$
 \end{aligned}
 $$
 
-可以看出，此表达式与Rogrigue's formula形式相同，$\mathfrak{s0}(3)$ 实际上就是旋转向量组成的空间。 
+可以看出，此表达式与Rogrigue's formula形式相同，李代数$\mathfrak{s0}(3)$ 实际上就是旋转向量组成的空间。 
 
+- For transform matrix  
+    - 李代数 $\mathfrak{se}(3)$
+    $$\xi^{\wedge}=
+    \begin{bmatrix}
+    \phi^{\wedge} & \rho \\
+    \mathbf{0}^{\mathrm{T}} & 0
+    \end{bmatrix}\in\mathbb{R}^{4\times4}
+    $$
+    这里的$^\wedge$表示向量映射为矩阵而非反对称
 
+    - 指数映射  
+    $$
+    \begin{aligned}
+    \exp\left(\xi^{\wedge}\right)&=
+    \begin{bmatrix}
+    \sum_{n=0}^{\infty}\frac{1}{n!}{\left(\phi^{\wedge}\right)}^{n} & \sum_{n=0}^{\infty}\frac{1}{\left(n+1\right)!}{\left(\phi^{\wedge}\right)}^{n}\boldsymbol{\rho} \\
+    \mathbf{0}^{\mathrm{T}} & 1
+    \end{bmatrix} \\
+    &\triangleq
+    \begin{bmatrix}
+    R & J\rho \\
+    \\
+    \mathbf{0}^\mathrm{T} & 1
+    \end{bmatrix}=\boldsymbol{T}.
+    \end{aligned}
+    $$
+    After similar derivative, we can obtain $J$
+    $$
+    \boldsymbol{J}=\frac{\sin\theta}{\theta}\boldsymbol{I}+\left(1-\frac{\sin\theta}{\theta}\right)\boldsymbol{a}\boldsymbol{a}^\mathrm{T}+\frac{1-\cos\theta}{\theta}\boldsymbol{a}^\wedge
+    $$
+
+![relation](./images/relation.png)
+
+---

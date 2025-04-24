@@ -1,6 +1,5 @@
 # Mathematics
 
-
 ## Rotation of rigid body  
 
 ### New definition on cross product
@@ -18,7 +17,7 @@ a_3 & 0 & -a_1 \\
 \end{bmatrix} \bold{b} \equiv \bold{a}^\wedge \bold{b}
 $$
 
-Where we can import the $^\wedge$ symbol to reconstruct 3D vector $\bold{a}$ to and skew-symmetric matrix.
+Where we can import the $^\wedge$ symbol to reconstruct 3D vector $\bold{a}$ to and skew-symmetric matrix.  
 
 $$
 \bold{a}^\wedge = \begin{bmatrix} a_1 \\ a_2 \\ a_3 \end{bmatrix} ^\wedge = \begin{bmatrix}
@@ -29,16 +28,14 @@ a_3 & 0 & -a_1 \\
 $$
 
 ### Special Orthogonal Group
-- Rotation Matrix
-
+- Rotation Matrix  
 $$
 SO(n)=\{\bold{R}\in \mathbb{R}^{n\times n} | \bold{RR}^T=\bold{I},det(\bold{R})=1\}
 $$
-
 For rotation matrix, $n=3$.
 
 ### Special Euclidian Group
-- Transform Matrix
+- Transform Matrix  
 $$
 \bold{T}=\begin{bmatrix}
 \bold{R} & \bold{t} \\
@@ -49,7 +46,7 @@ $$
 SE(n)=\{\bold{T}\in \mathbb{R}^{4\times 4} | \bold{R}\in \mathrm{SO}(3),\bold{t}\in \mathbb{R}^{3}\}
 $$
 
-- Inverse of $\bold{T}$  
+- Inverse of $\bold{T}$   
 $$
 \bold{T}^{-1}=
 \begin{bmatrix}
@@ -58,7 +55,7 @@ $$
 $$
 
 ### Rotational vector
-- Rodrigues's formula: 
+- Rodrigues's formula:   
 $$
 \bold{R}=\cos\theta\bold{I}+(1-\cos\theta)\bold{nn}^T+\sin\theta \bold{n}^\wedge
 $$
@@ -71,7 +68,7 @@ $$
 
 
 ## Quaternion
-- Express
+- Expression  
 $$
 \bold{q}=q_0+q_1 i+q_2 j+q_3 k=[s,\bold{v}]^T
 $$
@@ -85,12 +82,12 @@ ki=j, \quad ik=-j
 $$
 
 ### Computations
-- Multiplication
+- Multiplication  
 $$
 \bold{q}_a \bold{q}_b=[s_as_b-\bold{v}_a^T\bold{v_b},\space s_a\bold{v}_b+s_b\bold{v}_a+\bold{v}_a\times\bold{v}_b]^T
 $$
 
-- Module
+- Module  
 $$
 ||\bold{q}||=\sqrt{s_a^2+||\bold{v}||^2}
 $$
@@ -100,12 +97,12 @@ $$
 ||\bold{q}_a\bold{q}_b||=||\bold{q}_a||\cdot||\bold{q}_b||
 $$
 
-- Conjugate: Opposite the imaginary part
+- Conjugate: Opposite the imaginary part  
 $$
 \bold{q}_a^*=[s_a,-v_a]^T
 $$
 
-- Inverse
+- Inverse  
 $$
 \bold{q}^{-1}=\frac{\bold{q}^*}{||\bold{q}||^2}
 $$
@@ -113,15 +110,15 @@ $$
 
 ### Represent rotation with quaternion
 
-- 三维空间中的点可以用一个虚四元数表示
+- 三维空间中的点可以用一个虚四元数表示  
 $$
 \bold{p}=[0,x,y,z]^T
 $$
-- 任意单位四元数表示一个旋转
+- 任意单位四元数表示一个旋转  
 $$
 \bold{p}'=\bold{qpq}^{-1}
 $$
-- 把四元数乘法写成矩阵乘法的形式  
+- 把四元数乘法写成矩阵乘法的形式   
 Define:
 $$
 \bold{q}^+=\begin{bmatrix}
@@ -135,23 +132,23 @@ s & -\bold{v}^T \\
 \bold{v} & s\bold{I}-\bold{v}^\wedge\end{bmatrix}
 $$
 
-- It is verified that
+- It is verified that  
 $$
 \bold{q}_1\bold{q}_2=\bold{q}_1^+\bold{q}_2=\bold{q}_2^\oplus\bold{q}_1
 $$
 
 ### Rotational matrix from quaternion
-After brief derivation  
+After brief derivation    
 $$
 \bold{R} = \bold{vv}^T+s^2\bold{I}+2s\bold{v}^\wedge+(\bold{v}^\wedge)^2
 $$
 
-Take the trace, we can obtain 
+Take the trace, we can obtain  
 $$
 \theta=2\arccos s
 $$
 
-Then the rotation angle and axis is
+Then the rotation angle and axis is  
 
 $$
 \theta=2\arccos q_0

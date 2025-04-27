@@ -94,3 +94,44 @@ $$
 \end{aligned}
 $$
 
+
+## Aside SO(3) and SE(3), 相似变换Sim(3)
+Sim(3)与$\mathfrak{sim}(3)$为相似变换群，用于单目相机图像的处理  
+
+对于位于空间中的点 $\boldsymbol{p}$, 在相机坐标系下要经过一个相似变换，而非欧式变换。  
+$$
+\boldsymbol{p}'=\begin{bmatrix}
+s\boldsymbol{R} & \boldsymbol{t}  \\
+\boldsymbol{0}^T  &  1
+\end{bmatrix} \boldsymbol{p}
+
+=s\boldsymbol{Rp}+\boldsymbol{t}
+$$
+在相似变换中，$s$ 被称为变换的尺度，对 $\boldsymbol{p}$ 进行缩放。  
+相似变换也对矩阵乘法构成群，称为相似变换群 $Sim(3)$。  
+李代数 $\mathfrak{sim}(3)$ 元素是一个七维向量 $\zeta$，其前六维与 $\mathfrak{se}(3)$ 相同，但是最后多出了一项 $\sigma$   
+$$
+\mathfrak{sim}(3) = \left\{ \zeta \mid \zeta = \begin{bmatrix} \rho \\ \phi \\ \sigma \end{bmatrix} \in \mathbb{R}^7, \zeta^\wedge = \begin{bmatrix} \sigma I + \phi^\wedge & \rho \\ 0^T & 0 \end{bmatrix} \in \mathbb{R}^{4 \times 4} \right\}
+$$
+指数映射为：  
+$$
+\exp(\zeta^\wedge) = \begin{bmatrix} e^\sigma \exp(\phi^\wedge) & J_s \rho \\ 0^T & 1 \end{bmatrix}
+$$
+
+其中，$\boldsymbol{J}_s$ 的形式为  
+$$
+\begin{aligned}
+J_s = &\frac{e^\sigma - 1}{\sigma} I + \frac{\sigma e^\sigma \sin \theta + (1 - e^\sigma \cos \theta) \theta}{\sigma^2 + \theta^2} a^\wedge \\&+ \left( \frac{e^\sigma - 1}{\sigma} - \frac{(e^\sigma \cos \theta - 1) \sigma + (e^\sigma \sin \theta) \theta}{\sigma^2 + \theta^2} \right) a^\wedge a^\wedge
+\end{aligned}
+$$
+
+对于李代数 $\zeta$，与李群的对应关系为  
+$$
+s=e^\sigma\quad \boldsymbol{R}=\exp(\phi^\wedge)\quad \boldsymbol{t}=\boldsymbol{J}_s\boldsymbol{\rho}
+$$
+
+
+
+
+
+
